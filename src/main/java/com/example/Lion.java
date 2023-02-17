@@ -4,7 +4,13 @@ import java.util.List;
 
 public class Lion {
 
+    private FelineInterface felineInterface;
+
     boolean hasMane;
+
+    public Lion(FelineInterface felineInterface){
+        this.felineInterface = felineInterface;
+    }
 
     public Lion(String sex) throws Exception {
         if ("Самец".equals(sex)) {
