@@ -9,5 +9,6 @@ public class forDI {
         lion.getKittens();
 
 
+
     }
 }
