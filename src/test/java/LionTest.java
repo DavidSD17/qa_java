@@ -1,4 +1,4 @@
-import com.example.Lion;
+import ru.yandex.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -7,7 +7,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 
 @RunWith(MockitoJUnitRunner.class)
-public class TestLion {
+public class LionTest {
 
     @Mock
     Lion lion;

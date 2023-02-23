@@ -1,11 +1,12 @@
-package com.example;
+package ru.yandex;
 
-public class forDI {
+public class Main {
     public static void main(String[] args) throws Exception {
 
     FelineInterface felineInterface = new Feline();
     Lion lion = new Lion(felineInterface);
-    lion.getKittens();
+    System.out.println(lion.getKittens(1));
+
 
 
     }
