@@ -9,6 +9,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -29,6 +31,15 @@ public class LionTest {
         feline.getFood("Хищник");
         Mockito.verify(feline,Mockito.times(1)).getFood("Хищник");
     }
+
+    @Test
+    public void checkFood() throws Exception {
+        Lion lion = new Lion("Самец");
+        List<String> actual = lion.getFood();
+        List<String> expected = List.of("Животные", "Птицы", "Рыба");
+        assertEquals(expected,actual);
+
+    }
     @Test
     public void checkDoesHaveManeTrue() throws Exception {
         Lion lion1 = new Lion("Самец");
@@ -42,6 +53,5 @@ public class LionTest {
         Boolean actual = lion1.doesHaveMane();
         assertEquals(false,actual);
     }
-
 
 }

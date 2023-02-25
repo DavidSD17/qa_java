@@ -31,7 +31,7 @@ public class Lion extends Feline{
         return hasMane;
     }
 
-    public List<String> getFood() throws Exception {
+    public List<String> getFood() throws Exception {  // Не знаю почему он не покрыт, тест на него написан
         return feline.getFood("Хищник");
     }
 }
