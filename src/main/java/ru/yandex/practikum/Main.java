@@ -1,4 +1,4 @@
-package ru.yandex;
+package ru.yandex.practikum;
 
 public class Main {
     public static void main(String[] args) throws Exception {

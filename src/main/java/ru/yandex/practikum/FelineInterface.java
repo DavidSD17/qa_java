@@ -1,4 +1,4 @@
-package ru.yandex;
+package ru.yandex.practikum;
 
 import java.util.List;
 

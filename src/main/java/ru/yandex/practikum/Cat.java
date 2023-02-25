@@ -1,8 +1,8 @@
-package ru.yandex;
+package ru.yandex.practikum;
 
 import java.util.List;
 
-public class Cat {
+public class Cat extends Animal implements Predator{
 
     Predator predator;
 
@@ -21,6 +21,8 @@ public class Cat {
         return predator.eatMeat();
     }
 
-    public void eatMeat() {
+    @Override
+    public List<String> eatMeat() throws Exception {
+            return getFood("Хищник");
     }
 }

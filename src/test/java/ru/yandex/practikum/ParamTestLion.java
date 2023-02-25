@@ -1,4 +1,6 @@
-import ru.yandex.Lion;
+package ru.yandex.practikum;
+
+import ru.yandex.practikum.Lion;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,13 +16,7 @@ public class ParamTestLion {
     public ParamTestLion(String sex){
         this.sex =sex;
     }
-    
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(this);
-    }
 
-    Lion lion =  Mockito.mock(Lion.class);
 
 @Parameterized.Parameters
 public static Object[][] getTestDataSex() {
@@ -39,8 +35,8 @@ public static Object[][] getTestDataSex() {
 
 @Test
     public void Lion() throws Exception {
-    Lion lion1 = new Lion(sex);
-//    Mockito.verify(lion, Mockito.times(1)).doesHaveMane();
+    Lion lion = new Lion(sex);
+
 
 }
 

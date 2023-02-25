@@ -1,12 +1,14 @@
-import ru.yandex.Cat;
+package ru.yandex.practikum;
+
+import ru.yandex.practikum.Cat;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import org.mockito.junit.MockitoJUnitRunner;
-import ru.yandex.Feline;
-import ru.yandex.Predator;
+import ru.yandex.practikum.Feline;
+import ru.yandex.practikum.Predator;
 
 import static org.junit.Assert.assertEquals;
 
