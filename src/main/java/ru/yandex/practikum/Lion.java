@@ -3,12 +3,12 @@ package ru.yandex.practikum;
 import java.util.List;
 
 public class Lion extends Feline{
-    private FelineInterface felineInterface;
     boolean hasMane;
+    protected String sex;
 
-    public Lion(FelineInterface felineInterface){
-
-        this.felineInterface = felineInterface;
+    public Lion(String sex, Feline feline){
+        this.sex = sex;
+        this.feline = feline;
     }
 
     public Lion(String sex) throws Exception {

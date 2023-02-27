@@ -31,6 +31,15 @@ public class LionTest {
         feline.getFood("Хищник");
         Mockito.verify(feline,Mockito.times(1)).getFood("Хищник");
     }
+    @Test
+    public void checkGetFoodReturns() throws Exception {
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+
+    }
+
+
+
+
 
     @Test
     public void checkFood() throws Exception {

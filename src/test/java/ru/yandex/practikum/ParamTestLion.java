@@ -18,7 +18,7 @@ public class ParamTestLion {
     }
 
 
-@Parameterized.Parameters
+@Parameterized.Parameters(name = "{index}:{0}")
 public static Object[][] getTestDataSex() {
     return new Object[][] {
             { "Самка"},
@@ -35,7 +35,8 @@ public static Object[][] getTestDataSex() {
 
 @Test
     public void Lion() throws Exception {
-    Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex);
+        // На курсе нас не научили прверять наличие Exception не было ничего такого типа assert throws и т.д. Поэтому просьба подсказать, как это сделать. Заранее большое Спасибо))
 
 
 }
