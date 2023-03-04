@@ -1,4 +1,4 @@
-package ru.yandex.practikum;
+package ru.yandex.practikumTest;
 import ru.yandex.practikum.Cat;
 import ru.yandex.practikum.Feline;
 import ru.yandex.practikum.Lion;

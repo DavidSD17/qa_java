@@ -1,4 +1,4 @@
-package ru.yandex.practikum;
+package ru.yandex.practikumTest;
 
 import ru.yandex.practikum.Cat;
 import org.junit.Test;

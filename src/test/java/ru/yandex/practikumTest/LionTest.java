@@ -1,4 +1,4 @@
-package ru.yandex.practikum;
+package ru.yandex.practikumTest;
 
 import ru.yandex.practikum.Cat;
 import ru.yandex.practikum.Feline;
@@ -21,9 +21,10 @@ public class LionTest {
     Feline feline;
 
     @Test
-    public void getKittens(){
-        feline.getKittens();
-        Mockito.verify(feline,Mockito.times(1)).getKittens();
+    public void getKittens() throws Exception {
+        Lion lion = new Lion("Самец",feline);
+        lion.getKittens();
+        Mockito.verify(lion,Mockito.times(1)).getKittens();
     }
     @Test
     public void checkGetFoodLion() throws Exception {
@@ -43,7 +44,7 @@ public class LionTest {
 
     @Test
     public void checkFood() throws Exception {
-        Lion lion = new Lion("Самец");
+        Lion lion = new Lion("Самец",feline);
         List<String> actual = lion.getFood();
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         assertEquals(expected,actual);
@@ -51,14 +52,14 @@ public class LionTest {
     }
     @Test
     public void checkDoesHaveManeTrue() throws Exception {
-        Lion lion1 = new Lion("Самец");
+        Lion lion1 = new Lion("Самец",feline);
        Boolean actual = lion1.doesHaveMane();
        assertEquals(true,actual);
 
     }
     @Test
     public void checkDoesHaveManeFalse() throws Exception {
-        Lion lion1 = new Lion("Самка");
+        Lion lion1 = new Lion("Самка",feline);
         Boolean actual = lion1.doesHaveMane();
         assertEquals(false,actual);
     }
