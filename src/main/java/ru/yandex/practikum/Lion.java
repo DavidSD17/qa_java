@@ -6,11 +6,6 @@ public class Lion extends Feline{
     boolean hasMane;
     protected String sex;
 
-//    public Lion(String sex){
-//        this.sex = sex;
-//
-//    }
-
     public Lion(String sex,Feline feline) throws Exception {
         this.feline = feline;
         if ("Самец".equals(sex)) {

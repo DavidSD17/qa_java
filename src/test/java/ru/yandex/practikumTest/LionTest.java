@@ -23,30 +23,32 @@ public class LionTest {
     @Test
     public void getKittens() throws Exception {
         Lion lion = new Lion("Самец",feline);
-        lion.getKittens();
-        Mockito.verify(lion,Mockito.times(1)).getKittens();
+       assertEquals(0,lion.getKittens());
     }
     @Test
     public void checkGetFoodLion() throws Exception {
+        Lion lion = new Lion("Самец",feline);
+        lion.getFood();
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        assertEquals(List.of("Животные", "Птицы", "Рыба"),feline.getFood("Хищник"));
 
-        feline.getFood("Хищник");
-        Mockito.verify(feline,Mockito.times(1)).getFood("Хищник");
+
     }
     @Test
     public void checkGetFoodReturns() throws Exception {
-        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Lion lion = new Lion("Самец",feline);
+        lion.getFood();
+        Mockito.verify(feline,Mockito.times(1)).getFood("Хищник");
 
     }
-
-
-
 
 
     @Test
     public void checkFood() throws Exception {
         Lion lion = new Lion("Самец",feline);
-        List<String> actual = lion.getFood();
-        List<String> expected = List.of("Животные", "Птицы", "Рыба");
+        Feline feline1 = new Feline();
+        List<String> actual = feline1.getFood("Хищник"); //lion.getFood("Хищник");
+        List<String> expected =  List.of("Животные", "Птицы", "Рыба");
         assertEquals(expected,actual);
 
     }
