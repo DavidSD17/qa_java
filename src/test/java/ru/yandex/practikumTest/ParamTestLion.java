@@ -31,10 +31,7 @@ public static Object[][] getTestDataSex() {
     return new Object[][] {
             { "Самка"},
             { "Самец"},
-//            { "Лев"},
-//            {"Львица"},
-//            {"ОН"},
-//            {"ОНА"},
+
 
 
 
@@ -44,10 +41,13 @@ public static Object[][] getTestDataSex() {
 @Test
     public void Lion() throws Exception {
     Lion lion = new Lion(sex, feline);
+    if(sex == "Самец"){
+        assertTrue(lion.doesHaveMane());
+    } else if (sex == "Самка") {
+        assertTrue(!lion.doesHaveMane());
+    }
+
 }
-        // На курсе нас не научили прверять наличие Exception не было ничего такого типа assert throws и т.д. Поэтому просьба подсказать, как это сделать. Заранее большое Спасибо))
-
-
     }
 
 

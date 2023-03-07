@@ -1,25 +1,21 @@
 package ru.yandex.practikumTest;
 import ru.yandex.practikum.Feline;
 import ru.yandex.practikum.Lion;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertThrows;
 
 @RunWith(Parameterized.class)
-public class exceptionLionTest {
+public class ExceptionLionTest {
 
     private final String sex;
     private boolean hasMane;
 
-    public exceptionLionTest(String sex){
+    public ExceptionLionTest(String sex){
 
         this.sex =sex;
     }
@@ -33,8 +29,6 @@ public class exceptionLionTest {
                 {"Львица"},
                 {"ОН"},
                 {"ОНА"},
-//                { "Самка"},
-//                { "Самец"},
 
         };
     }
@@ -50,17 +44,6 @@ public class exceptionLionTest {
         assertTrue(expected.contains(actual));
     }
 
-//    @Test
-//    public void throwsExceptionTest() throws Exception {
-//        Feline feline = new Feline();
-//        try {
-//            Lion lion = new Lion(sex, feline);
-//        } catch (Exception e){
-//            String text = e.getMessage();
-//            assertEquals("Используйте допустимые значения пола животного - самец или самка",e.getMessage());
-//            return;
-//        } fail();
-//    }
 
 }
 
