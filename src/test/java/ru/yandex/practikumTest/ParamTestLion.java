@@ -1,11 +1,19 @@
-import com.example.Lion;
+package ru.yandex.practikumTest;
+
+import ru.yandex.practikum.Feline;
+import ru.yandex.practikum.Lion;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.mockito.Mock;
+
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
+
+
 
 @RunWith(Parameterized.class)
 public class ParamTestLion {
@@ -15,23 +23,15 @@ public class ParamTestLion {
     public ParamTestLion(String sex){
         this.sex =sex;
     }
-    
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(this);
-    }
 
-    Lion lion =  Mockito.mock(Lion.class);
+    Feline feline = new Feline();
 
-@Parameterized.Parameters
+@Parameterized.Parameters(name = "{index}:{0}")
 public static Object[][] getTestDataSex() {
     return new Object[][] {
             { "Самка"},
             { "Самец"},
-            { "Лев"},
-            {"Львица"},
-            {"ОН"},
-            {"ОНА"},
+
 
 
 
@@ -40,10 +40,18 @@ public static Object[][] getTestDataSex() {
 
 @Test
     public void Lion() throws Exception {
-    Lion lion1 = new Lion(sex);
-//    Mockito.verify(lion, Mockito.times(1)).doesHaveMane();
+    Lion lion = new Lion(sex, feline);
+    if(sex == "Самец"){
+        assertTrue(lion.doesHaveMane());
+    } else if (sex == "Самка") {
+        assertTrue(!lion.doesHaveMane());
+    }
 
 }
+    }
 
 
-}
+
+
+
+
